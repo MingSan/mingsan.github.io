@@ -1,93 +1,43 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: MingSan's # ex. I m Chuan
-name: MingSan # ex. DONGChuan
-email: 3113645600@qq.com
-location: My location # ex. Nice, France
-company: MyCompany
-company_url: my_company_website
-github_url: https://github.com/mingsan # ex. https://github.com/DONGChuan
-github_username: # ex. DONGChuan
-description: description_of_your_web_site
-favicon: favicon.png # Image must be in assets/images
-repository: MingSan/mingsan.github.io # ex. DONGChuan/DONGChuan.github.io
+title: Jekyll-Uno
+description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+url: 'http://joshgerdes.com/jekyll-uno'
+baseurl: '/jekyll-uno'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
 
-# The base hostname & protocol for your site
-# For local test, please use http://localhost:4000
-# For production, use your github page url. ex. http://dongchuan.github.io
-url: http://localhost:4000
+author:
+  name: 'Josh Gerdes'
+  email: josh@joshgerdes.com
+  twitter_username: joshgerdes
+  facebook_username: joshgerdes
+  github_username:  joshgerdes
+  linkedin_username:  joshgerdes
 
-## Gem
-gems:
-  - jekyll-paginate
-  - jekyll-geo-pattern
-  - rouge
-  - kramdown
-  - jekyll-github-metadata
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
 
 # Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
-lsi:         false
-excerpt_separator: "\n\n"
 
-source:      .
-destination: ./_site
-
-quiet:    false
-defaults: []
+sass:
+    sass_dir: _sass
+    style: compressed
 
 kramdown:
+  # use Github Flavored Markdown
   input: GFM
-  enable_coderay: true
+  # do not replace newlines by <br>s
+  hard_wrap: false
 
-# Disque
-disque: my_disque_settings # ex. httpdongchuangithubio.disqus.com
-
-# Pagination
-paginate: 10
-paginate_path: 'page:num'
-
-# Navigation. If you do not like these modules, just remove them :D
-navs:
-  -
-    href: /
-    label: Home
-
-  -
-    href: /open-source
-    label: Open-Source
-
-  -
-    href: /blog
-    label: Blog
-
-  -
-    href: /bookmark
-    label: Bookmark
-
-  -
-    href: /about
-    label: About
-
-# Sidebar to show popular repo
-side_bar_repo_limit: 5 # Number of repos to show
-
-# Google Analytics
-analytics :
-  provider : google
-  google :
-      tracking_id : 'tracking_id'  # ex. UA-72165600-X
-
-
-# For about.html. Fell free to create your own!
-skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
-skill_mobile_app_keywords: [Android, Sketch UI Desgin]
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
